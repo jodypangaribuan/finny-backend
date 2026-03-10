@@ -1,0 +1,7 @@
+services:
+  api:
+    build: .
+    container_name: finny_backend_api
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
