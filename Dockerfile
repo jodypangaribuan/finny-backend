@@ -5,8 +5,8 @@ FROM golang:alpine AS builder
 WORKDIR /app
 
 # Menyalin file konfigurasi Go modules
-COPY go.mod ./
-# RUN go mod download (Bisa di-uncomment jika nanti ada package eksternal)
+COPY go.mod go.sum ./
+RUN go mod download
 
 # Menyalin seluruh source code
 COPY . .
